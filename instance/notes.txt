@@ -1,0 +1,1 @@
+passwords from users with id 1 and 2 are not crypted, therefore which causes some errors

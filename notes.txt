@@ -1,0 +1,33 @@
+So you can remember how to work with SQLAlchemy ORM (Object Relational Mapper) in Flask
+
+>>> db.session.add(i1)   
+>>> db.session.commit()
+>>> db.query.all()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'sqlalchemy.orm.query' has no attribute 'all'
+>>> Item.query.all()
+[Item Iphone 16, Item Macbook Air]
+>>> iphone = Item.query.all().first()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'first'
+>>> iphone = Item.query.all()[0      
+... ]
+>>> iphone
+Item Iphone 16
+>>> iphone.owner
+>>> user_id= User.query.all()[0]
+>>> user_id
+<User 1>
+>>> user_id.id
+1
+>>> iphone.owner = user_id.id
+>>> db.session.add(iphone)
+>>> db.session.commit()
+>>> item = Item.query.all()[0]
+>>> item
+Item Iphone 16
+>>> item.owned_user
+<User 1>
+>>>
